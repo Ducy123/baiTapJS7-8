@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[BÀI_TẬP] BÀI TẬP JS BUỔI 7</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="toggle-buttons-container">
+            <button class="btn btn-secondary toggle-button" onclick="toggleBaiTap(1)">Toggle Bài Tập 1</button>
+            <button class="btn btn-secondary toggle-button" onclick="toggleBaiTap(2)">Toggle Bài Tập 2</button>
+            <button class="btn btn-secondary toggle-button" onclick="toggleBaiTap(3)">Toggle Bài Tập 3</button>
+            <button class="btn btn-secondary toggle-button" onclick="toggleBaiTap(4)">Toggle Bài Tập 4</button>
+            <button class="btn btn-secondary toggle-button" onclick="toggleBaiTap(5)">Toggle Bài Tập 5</button>
+            <button class="btn btn-secondary toggle-button" onclick="toggleBaiTap(6)">Toggle Bài Tập 6</button>
+            <button class="btn btn-secondary toggle-button" onclick="toggleBaiTap(7)">Toggle Bài Tập 7</button>
+            <button class="btn btn-secondary toggle-button" onclick="toggleBaiTap(8)">Toggle Bài Tập 8</button>
+            <button class="btn btn-secondary toggle-button" onclick="toggleBaiTap(9)">Toggle Bài Tập 9</button>
+            <button class="btn btn-secondary toggle-button" onclick="toggleBaiTap(10)">Toggle Bài Tập 10</button>
+            <button class="btn btn-secondary toggle-button" onclick="toggleBaiTap(11)">Toggle Bài Tập 11</button>
+        </div>
+        <div class="container mt-5">
+            <h1 class="text-center">Bài Tập JavaScript 7-8</h1>
+
+            <!-- Thêm số -->
+            <div class="form-group">
+                <label for="so">Nhập số:</label>
+                <input type="number" id="so" class="form-control">
+                <button class="btn btn-primary mt-2" onclick="themSo()">Thêm số</button>
+            </div>
+            <div id="ketQua" class="alert alert-info mt-3"></div>
+
+            <!-- Bài tập 1 -->
+            <div class="bai-tap" id="baiTap1">
+                <div class="bai-tap-content">
+                    <h3 class="bg bg-danger text-white mb-3">Bài tập 1: Tìm tổng số dương</h3>
+                    <button class="btn btn-primary rounded" id="tinhTong" onclick="tinhTong()">Tính tổng</button>
+                    <div id="baiTap1Result" class="alert alert-success bg bg-opacity-75 p-3 mt-3"></div>
+                </div>
+            </div>
+
+            <!-- Bài tập 2 -->
+            <div class="bai-tap" id="baiTap2">
+                <div class="bai-tap-content">
+                    <h3 class="bg bg-danger text-white mb-3">Bài tập 2: Đếm số dương</h3>
+                    <button class="btn btn-primary rounded" id="demSo" onclick="demSo()">Đếm số</button>
+                    <div id="baiTap2Result" class="alert alert-success bg bg-opacity-75 p-3 mt-3"></div>
+                </div>
+            </div>
+
+            <!-- Bài tập 3 -->
+            <div class="bai-tap" id="baiTap3">
+                <div class="bai-tap-content">
+                    <h3 class="bg bg-danger text-white mb-3">Bài tập 3: Tìm số nhỏ nhất</h3>
+                    <button class="btn btn-primary rounded" id="soNhoNhat" onclick="soNhoNhat()">Số nhỏ nhất</button>
+                    <div id="baiTap3Result" class="alert alert-success bg bg-opacity-75 p-3 mt-3"></div>
+                </div>
+            </div>
+
+            <!-- Bài tập 4 -->
+            <div class="bai-tap" id="baiTap4">
+                <div class="bai-tap-content">
+                    <h3 class="bg bg-danger text-white mb-3">Bài tập 4: Tìm số dương nhỏ nhất</h3>
+                    <button class="btn btn-primary rounded" id="soDuongNhoNhat" onclick="soDuongNhoNhat()">Số dương nhỏ
+                        nhất</button>
+                    <div id="baiTap4Result" class="alert alert-success bg bg-opacity-75 p-3 mt-3"></div>
+                </div>
+            </div>
+
+            <!-- Bài tập 5 -->
+            <div class="bai-tap" id="baiTap5">
+                <div class="bai-tap-content">
+                    <h3 class="bg bg-danger text-white mb-3">Bài tập 5: Tìm số chẵn cuối cùng</h3>
+                    <button class="btn btn-primary rounded" id="soChanCuoiCung" onclick="soChanCuoiCung()">Số chẵn cuối
+                        cùng</button>
+                    <div id="baiTap5Result" class="alert alert-success bg bg-opacity-75 p-3 mt-3"></div>
+                </div>
+            </div>
+
+            <!-- Bài tập 6 -->
+            <div class="bai-tap" id="baiTap6">
+                <div class="bai-tap-content">
+                    <h3 class="bg bg-danger text-white mb-3">Bài tập 6: Đổi chỗ hai giá trị</h3>
+                    <div class="form-group">
+                        <label for="viTri_1">Vị trí 1:</label>
+                        <input type="number" id="viTri_1" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="viTri_2">Vị trí 2:</label>
+                        <input type="number" id="viTri_2" class="form-control">
+                    </div>
+                    <button class="btn btn-primary rounded" id="doiCho" onclick="doiCho()">Đổi chỗ</button>
+                    <div id="baiTap6Result" class="alert alert-success bg bg-opacity-75 p-3 mt-3"></div>
+                </div>
+            </div>
+
+            <!-- Bài tập 7 -->
+            <div class="bai-tap" id="baiTap7">
+                <div class="bai-tap-content">
+                    <h3 class="bg bg-danger text-white mb-3">Bài tập 7: Sắp xếp mảng</h3>
+                    <button class="btn btn-primary rounded" id="sapXep" onclick="sapXep()">Sắp xếp</button>
+                    <div id="baiTap7Result" class="alert alert-success bg bg-opacity-75 p-3 mt-3"></div>
+                </div>
+            </div>
+
+            <!-- Bài tập 8 -->
+            <div class="bai-tap" id="baiTap8">
+                <div class="bai-tap-content">
+                    <h3 class="bg bg-danger text-white mb-3">Bài tập 8: Tìm số nguyên tố đầu tiên</h3>
+                    <button class="btn btn-primary rounded" id="timSoNT" onclick="timSoNT()">Tìm số nguyên tố</button>
+                    <div id="baiTap8Result" class="alert alert-success bg bg-opacity-75 p-3 mt-3"></div>
+                </div>
+            </div>
+
+            <!-- Bài tập 9 -->
+            <div class="bai-tap" id="baiTap9">
+                <div class="bai-tap-content">
+                    <h3 class="bg bg-danger text-white mb-3">Bài tập 9: Đếm số nguyên</h3>
+                    <button class="btn btn-primary rounded" id="demSoNguyen" onclick="demSoNguyen()">Đếm số
+                        nguyên</button>
+                    <div id="baiTap9Result" class="alert alert-success bg bg-opacity-75 p-3 mt-3"></div>
+                </div>
+            </div>
+
+            <!-- Bài tập 10 -->
+            <div class="bai-tap" id="baiTap10">
+                <div class="bai-tap-content">
+                    <h3 class="bg bg-danger text-white mb-3">Bài tập 10: Đếm số âm và số dương</h3>
+                    <button class="btn btn-primary rounded" id="demSoAmDuong" onclick="demSoAmDuong()">Đếm số âm và số
+                        dương</button>
+                    <div id="baiTap10Result" class="alert alert-success bg bg-opacity-75 p-3 mt-3"></div>
+                </div>
+            </div>
+
+            <!-- Bài tập 11 -->
+            <div class="bai-tap" id="baiTap11">
+                <div class="bai-tap-content">
+                    <h3 class="bg bg-danger text-white mb-3">Bài tập 11: Cập nhật giá trị</h3>
+                    <div class="form-group">
+                        <label for="giaTriCu">Giá trị cũ:</label>
+                        <input type="number" id="giaTriCu" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="giaTriMoi">Giá trị mới:</label>
+                        <input type="number" id="giaTriMoi" class="form-control">
+                    </div>
+                    <button class="btn btn-primary rounded" id="capNhat" onclick="capNhat()">Cập nhật</button>
+                    <div id="baiTap11Result" class="alert alert-success bg bg-opacity-75 p-3 mt-3"></div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function toggleBaiTap(baiTapNumber) {
+                const baiTapContent = document.querySelector(`#baiTap${baiTapNumber} .bai-tap-content`);
+                if (baiTapContent) {
+                    baiTapContent.style.display = baiTapContent.style.display === 'none' ? 'block' : 'none';
+                }
+            }
+        </script>
+
+
+        <script src="/style.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+        </section>
+</body>
+
+</html>
